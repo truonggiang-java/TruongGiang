@@ -1,0 +1,36 @@
+package weather;
+
+import java.util.Scanner;
+
+public class weather {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("------------Forecast global--------------");
+		System.out.println("1. Dragonfly flying low");
+		System.out.println("2. Dragonfly flying high");
+		System.out.println("3. Dragonfly flying medium");
+		System.out.println("4. Dragonfly are relaxing");
+		System.out.println("5. Exit");
+		System.out.print("Please choice an option 1-5: ");
+		int choice=sc.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("It's rain");
+			break;
+		case 2:
+			System.out.println("It's sunny");
+			break;
+		case 3:
+			System.out.println("It's cloudy");
+			break;
+		case 4:
+			System.out.println("Wait for Dragonfly fly");
+			break;
+		case 5:
+			System.exit(0);
+			break;
+		default:
+			System.out.println("You choice fail");	
+		}
+	}
+}

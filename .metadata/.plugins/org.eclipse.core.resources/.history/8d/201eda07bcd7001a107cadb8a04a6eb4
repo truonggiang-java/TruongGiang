@@ -1,0 +1,16 @@
+package lap5_bai1_temerpature;
+
+public class Excersie01 {
+	public static void main(String[] args) {
+		//tao moi doi tuong teerparture
+		teerparture te=new teerparture();
+		//khai bao value
+		double value=100;
+		//chuyen doi nhiet do C->F
+		double result=te.convert(value, true);
+		System.out.printf("Chuyen nhiet do %fC sang  %fF ",value,result);
+		//chuyendoi nhiet do F->C
+		result=te.convert(value, false);
+		System.out.printf("Chuyen nhiet do %fF sang  %fC ",value,result);
+	}
+}

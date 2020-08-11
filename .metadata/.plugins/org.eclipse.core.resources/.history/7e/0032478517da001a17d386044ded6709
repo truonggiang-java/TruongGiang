@@ -1,0 +1,14 @@
+package lap8_bai2_Account;
+
+public class App {
+	public static void main(String[] args) {
+		PersonAccount pa=new PersonAccount("1100","Cao Truong Giang",230000,11000);
+		//in thonng tin tai khoan
+		pa.HienThi();
+		//doi tuong rut tien
+		pa.withDraw(10000);
+		//doi tuong gui tien;
+		pa.deposite(20000);
+		SavingAccount sa=new SavingAccount("1100","Nguyen Van A",30000000,3,15);
+	}
+}

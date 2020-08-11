@@ -1,0 +1,11 @@
+package lap5_bai3_cook;
+
+public class Main {
+	public static void main(String[] args) {
+		person per=new person();
+		per.eat("Com");
+		per.eat("Com", "Canh");
+		per.eat("Com", "3");
+		per.eat("Com","Canh", "Ca");
+	}
+}	

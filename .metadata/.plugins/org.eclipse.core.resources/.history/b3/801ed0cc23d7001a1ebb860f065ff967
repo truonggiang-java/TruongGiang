@@ -1,0 +1,7 @@
+package lap4_bai3_Rectangle;
+
+public class Rectangle {
+	private float height;
+	private float width;
+	
+}

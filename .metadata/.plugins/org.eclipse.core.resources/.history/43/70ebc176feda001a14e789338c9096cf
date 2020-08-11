@@ -1,0 +1,141 @@
+package test;
+
+import java.util.Scanner;
+
+public class InformationClient {
+	private String Loaive;
+	private String HoTen;
+	private String GioiTinh;
+	private int Tuoi;
+	private String TenChuyenBay;
+	private int ThoiGianBay;
+	private int SoLuong;
+	private double TienVe;
+
+	public InformationClient() {
+		super();
+	}
+
+	public InformationClient(String loaive, String hoTen, String gioiTinh, int tuoi, String tenChuyenBay,
+			int thoiGianBay, int soLuong, double tienVe) {
+		super();
+		Loaive = loaive;
+		HoTen = hoTen;
+		GioiTinh = gioiTinh;
+		Tuoi = tuoi;
+		TenChuyenBay = tenChuyenBay;
+		ThoiGianBay = thoiGianBay;
+		SoLuong = soLuong;
+		TienVe = tienVe;
+	}
+
+	public void setLoaive(String loaive) {
+		Loaive = loaive;
+	}
+
+	public String getHoTen() {
+		return HoTen;
+	}
+
+	public void setHoTen(String hoTen) {
+		HoTen = hoTen;
+	}
+
+	public String getGioiTinh() {
+		return GioiTinh;
+	}
+
+	public void setGioiTinh(String gioiTinh) {
+		GioiTinh = gioiTinh;
+	}
+
+	public void setTuoi(int tuoi) {
+		Tuoi = tuoi;
+	}
+
+	public String getTenChuyenBay() {
+		return TenChuyenBay;
+	}
+
+	public void setTenChuyenBay(String tenChuyenBay) {
+		TenChuyenBay = tenChuyenBay;
+	}
+
+	public void setThoiGianBay(int thoiGianBay) {
+		ThoiGianBay = thoiGianBay;
+	}
+
+	public int getSoLuong() {
+		return SoLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		SoLuong = soLuong;
+	}
+
+	public double getTienVe() {
+		return TienVe;
+	}
+
+	public void setTienVe(double tienVe) {
+		TienVe = tienVe;
+	}
+
+	public void inputData() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap ho va ten: ");
+		HoTen = sc.nextLine();
+		System.out.print("Nhap gioi tinh: ");
+		GioiTinh = sc.nextLine();
+		System.out.print("Nhap Tuoi: ");
+		Tuoi = Integer.parseInt(sc.nextLine());
+		System.out.print("Nhap ten chuyen bay: ");
+		TenChuyenBay = sc.nextLine();
+		System.out.print("Nhap thoi gian bay: ");
+		ThoiGianBay = Integer.parseInt(sc.nextLine());
+		System.out.print("Nhap loai ve: ");
+		Loaive = sc.nextLine();
+		System.out.print("Nhap so luong ve mua: ");
+		SoLuong = Integer.parseInt(sc.nextLine());
+		System.out.print("Nhap tien ve: ");
+		TienVe = Double.parseDouble(sc.nextLine());
+	}
+
+	public String getLoaive() {
+		
+		return "Loai ve: " + Loaive + " Tien Ve: "+ TienVe;
+	}
+
+	public String getThoiGianBay() {
+		if ((this.ThoiGianBay >= 20 && this.ThoiGianBay <= 24) || (this.ThoiGianBay >= 0 && this.ThoiGianBay <= 4)) {
+			TienVe = TienVe * (1 / 5);
+		} else {
+			TienVe = TienVe;
+		}
+
+		return "Thoi gian: " + ThoiGianBay + "h" + "Tien ve: " + TienVe;
+	}
+
+	public int getTuoi() {
+		if (Tuoi <= 6) {
+			TienVe = TienVe * (1 / 5);
+			System.out.printf("Khach hang la tre em duoi 6 tuoi ve chi con: %f\n", TienVe);
+		} else {
+			System.out.printf("Tuoi: %d gia: %f\n", Tuoi, TienVe);
+		}
+		return Tuoi;
+	}
+
+	public void displayData() {
+		System.out.println("---------------Information Client---------------------");
+		System.out.println("Ho va ten: " + this.HoTen);
+		System.out.println("Gioi Tinh: " + this.GioiTinh);
+		System.out.println(this.getTuoi());
+		System.out.println("Ten chuyen bay: " + this.TenChuyenBay);
+		System.out.println(this.getThoiGianBay());
+		System.out.println(this.getLoaive());
+		System.out.println("So Luong Ve Mua: " + this.SoLuong);
+		System.out.println("Tien Ve: "+this.TienVe);
+	}
+}

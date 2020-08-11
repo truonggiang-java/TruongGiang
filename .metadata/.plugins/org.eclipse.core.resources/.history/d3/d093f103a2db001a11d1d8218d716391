@@ -1,0 +1,35 @@
+package battap_t3h;
+
+public class VeMayBay {
+	private double VeCaoCap;
+	private double VeThuongGia;
+	private double VeTrungCap;
+	public double getVeCaoCap() {
+		return VeCaoCap;
+	}
+	public void setVeCaoCap(double veCaoCap) {
+		VeCaoCap = veCaoCap;
+	}
+	public double getVeThuongGia() {
+		return VeThuongGia;
+	}
+	public void setVeThuongGia(double veThuongGia) {
+		VeThuongGia = veThuongGia;
+	}
+	public double getVeTrungCap() {
+		return VeTrungCap;
+	}
+	public void setVeTrungCap(double veTrungCap) {
+		VeTrungCap = veTrungCap;
+	}
+	public VeMayBay(double veCaoCap, double veThuongGia, double veTrungCap) {
+		super();
+		VeCaoCap = veCaoCap;
+		VeThuongGia = veThuongGia;
+		VeTrungCap = veTrungCap;
+	}
+	public VeMayBay() {
+		super();
+	}
+	
+}

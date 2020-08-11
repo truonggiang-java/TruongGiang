@@ -1,0 +1,10 @@
+package lap8_bai1_kethua;
+
+public class App {
+	public static void main(String[] args) {
+		Staff sf=new Staff("Cao Truong Giang","Ha Noi","GTVT",3000000);
+		sf.HienThi();
+		Student st=new Student("Nguyen Van A","Ha Noi","JAVA",2020,200000);
+		st.HienThi();
+	}
+}

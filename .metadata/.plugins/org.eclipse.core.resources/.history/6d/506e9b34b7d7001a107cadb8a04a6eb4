@@ -1,0 +1,9 @@
+package lap4_bai3_Rectangle;
+
+public class Exercise03 {
+	public static void main(String[] args) {
+		//tao doi tuong Rectangle voi constructor co tham so
+		Rectangle rec=new Rectangle();
+		rec.displayData();
+	}
+}

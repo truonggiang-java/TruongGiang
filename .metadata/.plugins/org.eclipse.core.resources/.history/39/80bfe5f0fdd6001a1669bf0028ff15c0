@@ -1,0 +1,29 @@
+package lap3_bai3_sonhiphan;
+
+import java.util.Scanner;
+
+public class sonhiphan {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		//khai bao bien
+		int n;
+		String binarystring="";
+		int remain, result;
+		//vong lap 
+		do {
+			System.out.println("Enter number n in 100-200: ");
+			n=sc.nextInt();
+			
+		} while (n<100||n>200);
+		//chuyen sang nhi phan
+		do {
+			result=n/2;
+			remain=n%2;
+			binarystring=remain+binarystring;
+			n=result;
+			
+		} while (result==0);
+		//in ket qua sang so nhi phan
+		System.out.println("Binary number "+ binarystring);
+	}
+}

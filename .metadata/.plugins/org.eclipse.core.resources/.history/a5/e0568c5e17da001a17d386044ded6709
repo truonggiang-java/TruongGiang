@@ -1,0 +1,54 @@
+package lap8_bai2_Account;
+
+public class PersonAccount extends Account {
+	protected double fee;
+
+	public PersonAccount(String accountNo, String customerName, double balance, double fee) {
+		super(accountNo, customerName, balance);
+		this.fee = fee;
+	}
+
+	public PersonAccount(String accountNo, String customerName, double balance) {
+		super(accountNo, customerName, balance);
+	}
+
+	// phuong thuc rut tien
+	public void withDraw(double money) {
+		if (money == 0) {
+			System.out.println("Please enter money > 0");
+		}
+		else if(balance-fee<money) {
+			System.out.println("Balance in your account not enough for withdraw");
+		}
+		else(balance-fee>money){
+			balance=balance-(money+fee);
+					System.out.printf("Please recieve money is %8.2f. Your balance is %8.2f\n",money,balance);
+		}
+	}
+
+	// phuong thuc gui tien
+	public void deposite(double money) {
+		if(money==0) {
+			System.out.println("Please enter money > 0");
+		}
+		else {
+			balance=balance+money-fee;
+			System.out.printf("You just deposit %8.2f. Your balance is %8.2f\n",money,balance);
+		}
+	}
+
+	public double getFee() {
+		return fee;
+	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	public void HienThi() {
+		System.out.println("--------------------Account information------------------------");
+		System.out.println("AccountNo: "+this.accountNo);
+		System.out.println("CustomerName: "+this.customerName);
+		System.out.println("Balance: "+this.balance);
+		System.out.println("Free: "+this.fee);
+	}
+}

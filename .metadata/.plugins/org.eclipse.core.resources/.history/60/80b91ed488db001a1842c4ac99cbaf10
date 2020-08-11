@@ -1,0 +1,161 @@
+package test2;
+
+public class information {
+	public String Loaive;
+	public String hoten;
+	public String gioitinh;
+	public int tuoi;
+	public int thoigianbay;
+	public String tenchuyenbay;
+	public int soLuong;
+	public double TienVe;
+
+	public String getLoaive() {
+		return Loaive;
+	}
+
+	public void setLoaive(String loaive) {
+		Loaive = loaive;
+	}
+
+	public String getHoten() {
+		return hoten;
+	}
+
+	public void setHoten(String hoten) {
+		this.hoten = hoten;
+	}
+
+	public String getGioitinh() {
+		return gioitinh;
+	}
+
+	public void setGioitinh(String gioitinh) {
+		this.gioitinh = gioitinh;
+	}
+
+	public int getTuoi() {
+		return tuoi;
+	}
+
+	public void setTuoi(int tuoi) {
+		this.tuoi = tuoi;
+	}
+
+	public int getThoigianbay() {
+		return thoigianbay;
+	}
+
+	public void setThoigianbay(int thoigianbay) {
+		this.thoigianbay = thoigianbay;
+	}
+
+	public String getTenchuyenbay() {
+		return tenchuyenbay;
+	}
+
+	public void setTenchuyenbay(String tenchuyenbay) {
+		this.tenchuyenbay = tenchuyenbay;
+	}
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+	public double getTienVe() {
+		return TienVe;
+	}
+
+	public void setTienVe(double tienVe) {
+		TienVe = tienVe;
+	}
+
+	public information() {
+		super();
+	}
+
+	public information(String loaive, String hoten, String gioitinh, int tuoi, int thoigianbay, String tenchuyenbay,
+			int soLuong, double tienVe) {
+		super();
+		Loaive = loaive;
+		this.hoten = hoten;
+		this.gioitinh = gioitinh;
+		this.tuoi = tuoi;
+		this.thoigianbay = thoigianbay;
+		this.tenchuyenbay = tenchuyenbay;
+		this.soLuong = soLuong;
+		TienVe = tienVe;
+	}
+
+	public void discountSeats(String seats,double money) {
+		
+		if (this.Loaive == seats) {
+			this.TienVe=money*1/5;
+			System.out.printf("Loai ve: %s, ghe trung cap duoc giam gia 20%\n", Loaive);
+		} else {
+			System.out.printf("Loai ve: %s\n", Loaive);
+		}
+	}
+
+	public void discountAge(double money) {
+		if (this.tuoi <= 6) {
+			this.TienVe=money*1/5;
+			System.out.printf("Tuoi: %d, duoc giam 20%  khach hang la tre em duoi 6 tuoi\n", tuoi);
+		} else {
+
+			System.out.printf("Tuoi :%d\n", tuoi);
+		}
+	}
+
+	// thoi gian bay bay từ 20h tối -> 4h sang cho tất cả các loại ghế
+	public void discountTimes(double money) {
+		if ((this.thoigianbay >= 20 && this.thoigianbay <= 24) || (this.thoigianbay >= 0 && this.thoigianbay <= 4)) {
+			this.TienVe=money*1/2;
+			System.out.printf(
+					"Thoi gian bay: %dh trong khoang bay từ 20h tối -> 4h sang duoc giam gia 50% cho tất cả các loại ghế \n",
+					thoigianbay);
+		} else {
+			System.out.printf("Thoi gian bay: %dh\n", thoigianbay);
+		}
+	}
+
+	public void payableMoney(String seats) {
+		if (this.tuoi > 6 && (this.thoigianbay >= 5 && this.thoigianbay <= 19) && this.Loaive != seats) {
+			this.TienVe = this.soLuong * this.TienVe;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi > 6 && (this.thoigianbay >= 5 && this.thoigianbay <= 19) && this.Loaive == seats) {
+			this.TienVe = this.soLuong * this.TienVe * 1 / 5;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi <= 6 && (this.thoigianbay >= 5 && this.thoigianbay <= 19) && this.Loaive != seats) {
+			this.TienVe = this.soLuong * this.TienVe * 1 / 5;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi > 6 && ((this.thoigianbay >= 20 && this.thoigianbay <= 24)
+				|| (this.thoigianbay >= 0 && this.thoigianbay <= 4)) && this.Loaive != seats) {
+			this.TienVe = this.soLuong * this.TienVe * 1 / 2;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi > 6 && ((this.thoigianbay >= 20 && this.thoigianbay <= 24)
+				|| (this.thoigianbay >= 0 && this.thoigianbay <= 4)) && this.Loaive == seats) {
+			this.TienVe = this.soLuong * this.TienVe * 7 / 10;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi <= 6 && ((this.thoigianbay >= 20 && this.thoigianbay <= 24)
+				|| (this.thoigianbay >= 0 && this.thoigianbay <= 4)) && this.Loaive != seats) {
+			this.TienVe = this.soLuong * this.TienVe * 7 / 10;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		} else if (this.tuoi <= 6 && ((this.thoigianbay >= 20 && this.thoigianbay <= 24)
+				|| (this.thoigianbay >= 0 && this.thoigianbay <= 4)) && this.Loaive == seats) {
+			this.TienVe = this.soLuong * this.TienVe * 9 / 10;
+			System.out.printf("Tien khach phai tra la: %8.2f", this.TienVe);
+		}
+	}
+
+	public String toString() {
+		return "----------------------Client Information--------------------------\nHo Ten: " + this.hoten
+				+ "\nGioi Tinh: " + this.gioitinh + "\nTuoi: " + this.tuoi + "\nTen chuyen bay: " + this.tenchuyenbay
+				+ "\nThoi gian bay: " + this.thoigianbay + "\nSo luong ve khach mua: " + this.soLuong + "\nTien 1 ve: "
+				+ this.TienVe;
+	}
+}

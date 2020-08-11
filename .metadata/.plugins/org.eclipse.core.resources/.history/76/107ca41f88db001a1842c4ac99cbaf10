@@ -1,0 +1,15 @@
+package test2;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		information information = new information("Trung Cap","Cao truong giang","nam",5,21,"Ha Noi",3,2000);
+		System.out.println(information);
+		information.discountAge();
+		
+		information.payableMoney("Trung Cap");
+		
+	}  
+
+}

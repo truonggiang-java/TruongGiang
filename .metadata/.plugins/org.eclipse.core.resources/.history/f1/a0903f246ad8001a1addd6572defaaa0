@@ -1,0 +1,48 @@
+package lap6_bai1_mang;
+
+import java.util.Scanner;
+
+public class App {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n;
+		//khai bao mang 
+		int[] numbers;
+		System.out.println("Enter n: ");
+		n=sc.nextInt();
+		//khoi tao mang n phan tu
+		numbers=new int[n];
+		System.out.println("Enter element of array: ");
+		for(int i=0;i<n;i++) {
+			System.out.printf("numbers[%d]: ",i);
+			numbers[i]=sc.nextInt();
+		}
+		//in ra man hinh
+		System.out.println("Elements of array: ");
+		for(int i=0;i<n;i++) {
+			System.out.println(numbers[i]+"\t");
+		}
+		//sap xep mang
+		int temp;
+		for(int i=0;i<n-1;i++) {
+			for(int j=i+1;j<n;j++) {
+				if(numbers[i]<numbers[j]) {
+					temp=numbers[i];
+					numbers[i]=numbers[j];
+					numbers[j]=temp;
+				}
+			}
+		}
+		//in ra sau khi sap xep mang
+		System.out.println("elements of array after sort");
+		for(int i=0;i<n;i++) {
+			System.out.println(numbers[i]+"\t");
+		}
+		//in ra mang chia het cho 2  nhung khong chia het cho 3
+		for(int i=0;i<n;i++) {
+			if(numbers[i]%2==0 && numbers[i]%3!=0) {
+				System.out.println(numbers[i]+"\t");
+			}
+		}
+	}
+}

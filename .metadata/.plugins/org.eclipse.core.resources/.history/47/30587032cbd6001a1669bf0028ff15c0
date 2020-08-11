@@ -1,0 +1,22 @@
+package lap3_bai2_songuyento;
+
+public class Exercise03 {
+	public static void main(String[] args) {
+		boolean check;
+		System.out.println("So nguyen to tu 2-100 la: ");
+		for(int i=2;i<=100;i++) {
+			check=true;
+			for(int j=2;j<=i/2;j++) {
+				if(i%j==0) {
+					check=false;
+					break;
+				}
+				
+			}
+			if(check=true) {
+				System.out.printf(" %d ", i);
+			}
+		}
+		System.out.println("");
+	}
+}

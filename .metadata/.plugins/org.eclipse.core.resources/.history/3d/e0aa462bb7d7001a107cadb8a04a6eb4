@@ -1,0 +1,29 @@
+package lap4_bai3_Rectangle;
+
+import java.util.Scanner;
+
+public class Rectangle {
+	private float height;
+	private float width;
+	Scanner sc =new Scanner(System.in);
+	//tao constructor ko dung bien 
+	public Rectangle() {
+		super();
+	}
+	//tao constructor dung bien
+	public Rectangle(float height, float width) {
+		super();
+		this.height = height;
+		this.width = width;
+	}
+	public void displayData() {
+		System.out.println("-----------------Rectangle Details-------------------");
+		System.out.println("height: "+this.height);
+		System.out.println("width: "+this.width);
+		System.out.println("Dien tich hinh chu nhat: " +getArea());
+		System.out.println("Chu vi hinh chu nhat: "+getCircuit);
+	}
+	private float getArea() {
+		return height*width;
+	}
+}

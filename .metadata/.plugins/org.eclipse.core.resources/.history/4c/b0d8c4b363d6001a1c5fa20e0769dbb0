@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class time {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Nhap so giay ban muon: ");
+		int n=sc.nextInt();
+		float hour,minutes,seconds;
+		hour=n/3600;
+		minutes=(n%3600)/60;
+		seconds=n%60;
+		System.out.printf("Thoi gian la: 0.2%fh : 0.2%fphut : 0.2%fs",hour,minutes,seconds);
+	}
+}

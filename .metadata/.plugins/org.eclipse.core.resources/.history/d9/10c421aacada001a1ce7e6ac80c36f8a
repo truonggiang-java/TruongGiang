@@ -1,0 +1,26 @@
+package test;
+
+import java.util.Scanner;
+
+public class App {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		InformationClient ic =new InformationClient();
+		System.out.println("-----------------------information------------------------");
+		System.out.println("1.Nhap thong tin");
+		System.out.println("2.In");
+		System.out.print("Moi ban chon: ");
+		int choice = Integer.parseInt(sc.nextLine());
+		switch (choice) {
+		case 1:
+			ic.inputData();
+			break;
+		case 2:
+			ic.displayData();
+			break;
+		default:
+			System.out.println("Ban chi chon 1 trong 2");
+			break;
+		}
+	}
+}

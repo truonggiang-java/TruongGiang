@@ -1,0 +1,85 @@
+package battap_t3h;
+
+import java.util.Scanner;
+
+public class InformationClient extends VeMayBay {
+	private String HoTen;
+	private String GioiTinh;
+	private int Tuoi;
+	private String TenChuyenBay;
+	private String ThoiGianBay;
+	private int SoLuong;
+	private double TienVe;
+	public String getHoTen() {
+		return HoTen;
+	}
+	public void setHoTen(String hoTen) {
+		HoTen = hoTen;
+	}
+	public String getGioiTinh() {
+		return GioiTinh;
+	}
+	public void setGioiTinh(String gioiTinh) {
+		GioiTinh = gioiTinh;
+	}
+	public int getTuoi() {
+		return Tuoi;
+	}
+	public void setTuoi(int tuoi) {
+		Tuoi = tuoi;
+	}
+	public String getTenChuyenBay() {
+		return TenChuyenBay;
+	}
+	public void setTenChuyenBay(String tenChuyenBay) {
+		TenChuyenBay = tenChuyenBay;
+	}
+	public String getThoiGianBay() {
+		return ThoiGianBay;
+	}
+	public void setThoiGianBay(String thoiGianBay) {
+		ThoiGianBay = thoiGianBay;
+	}
+	public int getSoLuong() {
+		return SoLuong;
+	}
+	public void setSoLuong(int soLuong) {
+		SoLuong = soLuong;
+	}
+	public double getTienVe() {
+		return TienVe;
+	}
+	public void setTienVe(double tienVe) {
+		TienVe = tienVe;
+	}
+	public InformationClient(double veCaoCap, double veThuongGia, double veTrungCap, String hoTen, String gioiTinh,
+			int tuoi, String tenChuyenBay, String thoiGianBay, int soLuong, double tienVe) {
+		super(veCaoCap, veThuongGia, veTrungCap);
+		HoTen = hoTen;
+		GioiTinh = gioiTinh;
+		Tuoi = tuoi;
+		TenChuyenBay = tenChuyenBay;
+		ThoiGianBay = thoiGianBay;
+		SoLuong = soLuong;
+		TienVe = tienVe;
+	}
+	public InformationClient(double veCaoCap, double veThuongGia, double veTrungCap) {
+		super(veCaoCap, veThuongGia, veTrungCap);
+	}
+	public void inputData() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Nhập họ và tên: ");
+		HoTen=sc.nextLine();
+		System.out.println("Nhập giới tính: ");
+		GioiTinh=sc.nextLine();
+		System.out.println("Nhập tuổi: ");
+		Tuoi=sc.nextInt();
+		System.out.println("Nhập tên chuyến bay: ");
+		TenChuyenBay=sc.nextLine();
+		System.out.println("Nhập thời gian bay: ");
+		ThoiGianBay=sc.nextLine();
+		System.out.println("Nha");
+		System.out.println("Nhập số lượng: ");
+		SoLuong=sc.nextInt();
+	}
+}

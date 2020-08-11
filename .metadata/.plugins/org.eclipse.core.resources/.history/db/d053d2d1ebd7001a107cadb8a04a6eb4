@@ -1,0 +1,48 @@
+package lap5_bai2_employee;
+
+import java.util.Scanner;
+
+public class ManagementEmployee {
+	Scanner sc=new Scanner(System.in);
+	employee emp=new employee();
+	public void inputData() {
+		System.out.println("Enter Id: ");
+		emp.setEmployeeID(sc.nextLine());
+		System.out.println("Enter name: ");
+		emp.setFullName(sc.nextLine());
+		System.out.println("Enter Age: ");
+		emp.setAge(sc.nextInt());
+		System.out.println("Enter Salary: ");
+		emp.setSalary(sc.nextDouble());
+		System.out.println("Enter Number of Childs: ");
+		emp.setNumberofChilds(sc.nextInt());
+		if(emp.getNumberofChilds()==1) {
+			emp.setBonus(100000);
+		}
+		if(emp.getNumberofChilds()==2) {
+			emp.setBonus(300000);
+		}
+		if(emp.getNumberofChilds()>2) {
+			emp.setBonus(500000);
+		}
+		else {
+			emp.setBonus(0);
+		}
+	}
+	public void showDetails() {
+		System.out.println("Employee ID: "+emp.getEmployeeID());
+		System.out.println("Full name: "+emp.getFullName());
+		System.out.println("Age: "+emp.getAge());
+		System.out.println("Salary: "+emp.getSalary());
+		System.out.println("Number of childs: "+emp.getNumberofChilds());
+		System.out.println("Bonus: "+emp.getBonus());
+	}
+	public static void main(String[] args) {
+		//tao moi doi tuong quan ly nhan vien 
+		
+		ManagementEmployee me=new ManagementEmployee();
+		me.inputData();
+		me.showDetails();
+		
+	}
+}

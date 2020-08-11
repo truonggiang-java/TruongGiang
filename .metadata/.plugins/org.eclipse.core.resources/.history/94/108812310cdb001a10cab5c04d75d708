@@ -1,0 +1,17 @@
+package test2;
+
+public class Information implements iInformation {
+	public 
+	@Override
+	public void inputData() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void displayData() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

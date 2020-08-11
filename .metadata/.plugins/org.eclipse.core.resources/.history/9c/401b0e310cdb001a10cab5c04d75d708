@@ -1,0 +1,6 @@
+package test2;
+
+public interface iInformation {
+	public void inputData();
+	public void displayData();
+}

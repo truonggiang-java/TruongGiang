@@ -1,0 +1,19 @@
+package lap5_bai3_cook;
+
+public class person {
+	//khai bao 1 item
+	public void eat(String item1) {
+		System.out.printf("You eat one item: %s",item1);
+	}
+	//khai bao 2 item
+	public void eat(String item1,String item2) {
+		System.out.printf("You eat two items: %s + %s", item1, item2);
+	}
+	public void eat(String item1, int n) {
+		System.out.printf("you eat one %s for %d times",item1,n);
+	}
+	//khai bao nhieu bien
+	public void eat(String item1,String item2,String item3) {
+		System.out.printf("You eat three items: %s+%s+%s",item1,item2,item3);
+	}
+}

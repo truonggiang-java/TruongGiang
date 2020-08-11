@@ -1,0 +1,164 @@
+package bt_t3h;
+
+import java.util.Scanner;
+
+public class InformationClient implements Iinformation {
+	private String HoTen;
+	private String GioiTinh;
+	private int Tuoi;
+	private String TenChuyenBay;
+	private int ThoiGianBay;
+	private int SoLuong;
+	private double TienVe;
+	private String LoaiVe;
+
+	public InformationClient() {
+		super();
+	}
+
+	public InformationClient(String hoTen, String gioiTinh, int tuoi, String tenChuyenBay, int thoiGianBay, int soLuong,
+			double tienVe, String loaiVe) {
+		super();
+		HoTen = hoTen;
+		GioiTinh = gioiTinh;
+		Tuoi = tuoi;
+		TenChuyenBay = tenChuyenBay;
+		ThoiGianBay = thoiGianBay;
+		SoLuong = soLuong;
+		TienVe = tienVe;
+		LoaiVe = loaiVe;
+	}
+
+	public String getHoTen() {
+		return HoTen;
+	}
+
+	public void setHoTen(String hoTen) {
+		HoTen = hoTen;
+	}
+
+	public String getGioiTinh() {
+		return GioiTinh;
+	}
+
+	public void setGioiTinh(String gioiTinh) {
+		GioiTinh = gioiTinh;
+	}
+
+	public int getTuoi() {
+		return Tuoi;
+	}
+
+	public void setTuoi(int tuoi) {
+		Tuoi = tuoi;
+	}
+
+	public String getTenChuyenBay() {
+		return TenChuyenBay;
+	}
+
+	public void setTenChuyenBay(String tenChuyenBay) {
+		TenChuyenBay = tenChuyenBay;
+	}
+
+	public int getThoiGianBay() {
+		return ThoiGianBay;
+	}
+
+	public void setThoiGianBay(int thoiGianBay) {
+		ThoiGianBay = thoiGianBay;
+	}
+
+	public int getSoLuong() {
+		return SoLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		SoLuong = soLuong;
+	}
+
+	public double getTienVe() {
+		return TienVe;
+	}
+
+	public void setTienVe(double tienVe) {
+		TienVe = tienVe;
+	}
+
+	public String getLoaiVe() {
+		return LoaiVe;
+	}
+
+	public void setLoaiVe(String loaiVe) {
+		LoaiVe = loaiVe;
+	}
+
+	@Override
+	public void inputData() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập họ và tên: ");
+		HoTen = sc.nextLine();
+		System.out.println("Nhập giới tính: ");
+		GioiTinh = sc.nextLine();
+		System.out.println("Nhập tuổi: ");
+		Tuoi = Integer.parseInt(sc.nextLine());
+		System.out.println("Nhập số lượng: ");
+		SoLuong = Integer.parseInt(sc.nextLine());
+		System.out.println("Nhập tên chuyến bay: ");
+		TenChuyenBay = sc.nextLine();
+		System.out.println("Nhập thời gian bay: ");
+		ThoiGianBay = Integer.parseInt(sc.nextLine());
+		System.out.println("Nhập loại vé: ");
+		LoaiVe = sc.nextLine();
+		System.out.println("Nhập tiền vé: ");
+		TienVe = Double.parseDouble(sc.nextLine());
+
+	}
+
+	public double reduce() {
+		String ve = "Trung Cấp";
+		if (LoaiVe.equals(ve)) {
+			TienVe = 2000 * (1 / 5);
+			System.out.printf("Vé Trung Cấp được giảm giá 20% chỉ còn: %f\n", TienVe);
+		}
+		int age = 6;
+		if (Tuoi <= age) {
+			TienVe = TienVe * (1 / 5);
+			System.out.printf("Khách hàng là trẻ em dưới 6 tuổi được giảm 20% chỉ còn: %f\n", TienVe);
+		} else if (Tuoi > age) {
+			System.out.printf("age: %d\n", age);
+		}
+		return age;
+	}
+
+	public double reductTime() {
+		if ((ThoiGianBay >= 20 && ThoiGianBay <= 24) || (ThoiGianBay >= 0 && ThoiGianBay <= 4)) {
+			TienVe = TienVe * (1 / 2);
+			System.out.printf(
+					"Vé máy bay được giảm 50% nếu bay từ 20h tối -> 4h sang cho tất cả các loại ghế chỉ còn: %f\n",
+					TienVe);
+		} else {
+			System.out.printf("Thời gian bay: %d\n ", ThoiGianBay);
+		}
+		return ThoiGianBay;
+	}
+
+	public double pay() {
+		return TienVe = SoLuong * TienVe;
+	}
+
+	@Override
+	public void displayData() {
+		// TODO Auto-generated method stub
+		System.out.println("------------------------------------Information------------------------------------");
+		System.out.println("Họ và tên: " + this.HoTen);
+		System.out.println("Giới Tính: " + this.GioiTinh);
+		System.out.println("Tuổi: " + this.reduce());
+		System.out.println("Loai vé" + this.LoaiVe);
+		System.out.println("Thoi gian bay: "+this.reductTime());
+		System.out.println("Tên chuyến bay: " + this.TenChuyenBay);
+		System.out.println("Số lượng vé máy bay:" + this.SoLuong);
+		System.out.println("Tiền vé: " + this.pay());
+	}
+
+}

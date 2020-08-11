@@ -1,0 +1,67 @@
+package lap8_bai2_Account;
+
+public class SavingAccount  extends Account{
+	//khai bao lai suat,perior ky han
+	private double rate;
+	private int period;
+	//contructor
+	public SavingAccount(String accountNo, String customerName, double balance, double rate, int period) {
+		super(accountNo, customerName, balance);
+		this.rate = rate;
+		this.period = period;
+	}
+	
+	public SavingAccount() {
+		super();
+	}
+
+	//tao phuong thuc setter and getter
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+
+	public int getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(int period) {
+		this.period = period;
+	}
+	//phuong thuc tinh ti le lai suat theo ky han
+	public double getRate() {
+		if(period>1) {
+			switch (period) {
+			case 1:
+				rate=5;
+				break;
+			case 3:
+				rate=5.5;
+				break;
+			case 6:
+				rate=6;
+				break;
+			case 12:
+				rate=7;
+				break;
+			case 24:
+				rate=7.5;
+				break;
+			case 36:
+				rate=8;
+				break;
+			
+			default:
+				rate=1.8;
+				break;
+			}
+			
+		}
+		return rate;
+	}
+
+	
+}

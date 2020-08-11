@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class employee {
+	public static void main(String[] args) {
+		int employeeId,bonus = 0,totalHours;
+		String firstName,lastName,birthday;
+		final float payForHour=150f;
+		double salary;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter ID: ");
+		employeeId=sc.nextInt();
+		System.out.println("Enter fullname:");
+		firstName=sc.nextLine();
+		System.out.print("Enter lastName:");
+		lastName=sc.nextLine();
+		System.out.print("Enter Birthday: ");
+		birthday=sc.nextLine();
+		System.out.print("Enter total of hours: ");
+		totalHours=sc.nextInt();
+		if(totalHours>0 && totalHours<=200) {
+			if(totalHours>0 && totalHours<=20) {
+				bonus=0;
+			}
+			else if(totalHours>20 && totalHours<=50) {
+				bonus=200;
+			}
+			else if(totalHours>50 && totalHours<=80) {
+				bonus=500;
+			}
+			else if(totalHours>80 && totalHours<=100) {
+				bonus=800;
+			}
+			else if(totalHours>100 && totalHours<=150) {
+				bonus=1000;
+			}
+			else if(totalHours>150 && totalHours<=200) {
+				bonus=1500;
+			}
+			
+		}
+		else {
+			System.out.println("ban ko co luong");
+			bonus=0;
+			salary=0;
+		}
+		//in
+		salary=totalHours*payForHour+bonus;
+		System.out.println("--------------------Employee Details--------------------");
+		System.out.println("Employee ID: " +employeeId);
+		System.out.println("FullName: " +firstName);
+		System.out.println("lastName: " +lastName);
+		System.out.println("Total of hours: "+totalHours);
+		System.out.println("Bonus: "+bonus);
+		System.out.println("Salary: "+salary);
+	}
+}
